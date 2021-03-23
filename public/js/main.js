@@ -7,6 +7,8 @@ const send = document.getElementById('send');
 const chatBox = document.getElementById('chatbox');
 const chatD = document.getElementById('chatD');
 const chatW = document.getElementById('chatW');
+const msg = document.getElementById('msg');
+const disc = document.getElementById('disc');
 let user;
 
 chatD.style.display = 'none';
@@ -28,26 +30,45 @@ socket.on('message',msg =>{
 
 socket.on('welcome', msg =>{
     console.log(msg);
-    chatBox.innerHTML += "<div><strong>"+ msg + "</strong> se připojil do chatu. </div>";
+    chatBox.innerHTML += '<div style = "color : #009900"><strong>'+ msg + '</strong> se připojil do chatu. </div>';
 })
 
+/*
 function poslat(){
     if(true){
         console.log(message.value);
         socket.emit('chat', message.value, user);
     }
 }
+*/
 
-/* WIP
-send.addEventListener('click',function(e){
-    if(true){
+msg.addEventListener('click',function(e){
+    if(message.value){
         console.log(message.value);
         socket.emit('chat', message.value, user);
     }
 })
-*/
+
+disc.addEventListener('click', ()=>{
+    socket.emit('info', {msg:"se odpojil.", username:user});
+    chatBox.innerHTML += '<div style = "color : red"><b>Odpojili jste se.</b></div>';
+    socket.close();
+})
+
 
 socket.on('chat', (msg, username) => {
     console.log(msg);
     chatBox.innerHTML += '<div><strong>' + username + ':</strong> ' + msg + '</div>';
 });
+
+socket.on('info', (msg) => {
+    console.log(msg);
+    chatBox.innerHTML += '<div style = "color : red"><strong>' + msg.username + '</strong> ' + msg.msg + '</div>';
+});
+
+/*
+socket.on('disconnect', (reason) =>{
+    console.log(reason);
+});
+*/
+

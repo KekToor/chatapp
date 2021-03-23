@@ -20,6 +20,14 @@ io.on('connection', (socket) => {
     socket.on('chat', (msg, username) => {
         io.emit('chat', msg, username);
     });
+
+    socket.on('info', (msg) =>{
+        io.emit('info', msg);
+    })
+
+    socket.on('disconnect', (reason) =>{
+        console.log(reason);
+    })
 });
 
 
