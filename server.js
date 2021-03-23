@@ -12,8 +12,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 io.on('connection', (socket) => {
 
-    socket.on('login', msg =>{
-        io.emit('message',  "Vítej, " + msg);
+    socket.on('login', (msg) =>{
+        socket.emit('message', msg);
+        io.emit('welcome', msg);
     })
 
     socket.on('chat', (msg, username) => {

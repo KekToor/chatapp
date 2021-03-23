@@ -5,9 +5,11 @@ const username = document.getElementById('username');
 const message = document.getElementById('message');
 const send = document.getElementById('send');
 const chatBox = document.getElementById('chatbox');
+const chatD = document.getElementById('chatD');
+const chatW = document.getElementById('chatW');
 let user;
 
-chatBox.style.display = 'none';
+chatD.style.display = 'none';
 
 login.addEventListener('click',function(e){
     if(username.value){
@@ -20,7 +22,13 @@ login.addEventListener('click',function(e){
 socket.on('message',msg =>{
     console.log(msg);
     loginblock.style.display = 'none';
-    chatBox.style.display = 'block';
+    chatD.style.display = 'block';
+    chatW.innerHTML = "Vítej, " + msg;
+})
+
+socket.on('welcome', msg =>{
+    console.log(msg);
+    chatBox.innerHTML += "<div><strong>"+ msg + "</strong> se připojil do chatu. </div>";
 })
 
 function poslat(){
@@ -41,5 +49,5 @@ send.addEventListener('click',function(e){
 
 socket.on('chat', (msg, username) => {
     console.log(msg);
-    chatBox.innerHTML += '<div>' + username + ': ' + msg + '</div>';
+    chatBox.innerHTML += '<div><strong>' + username + ':</strong> ' + msg + '</div>';
 });

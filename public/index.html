@@ -10,40 +10,50 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <div class="headerDesign">
-        <h1 class="textDesign jumbotron">EZChat</h1>
-    </div>
+    <h1 class="textDesign jumbotron">EZChat</h1>
       <div class="container">
-          <div id = "loginblock" class="justify-content-center">
-            <form>
-                <div class="form-group row">
-                    <label for="message" class="col-sm-2 col-form-label">Zadejte jméno: </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="username" placeholder=" Uživatelské Jméno">
+          <div id = "loginblock" class="justify-content-center dispFlex mx-auto chatDesign cld">
+                <form>
+                    <div class="form-group row">
+                        <label for="message" class="col-sm-12 col-form-label text-center loginM pt-2 pb-4">Zadejte jméno: </label>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" id="username" placeholder=" Uživatelské Jméno">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <div class="offset-sm-2 col-sm-10">
-                        <button type="button" class="btn btn-success" id="login">Pokračovat</button>
+                    <div class="form-group row">
+                        <div class="col-sm-12 d-flex justify-content-center pt-4 pb-2">
+                            <button type="button" class="btn btn-danger" id="login">Pokračovat</button>
+                        </div>
                     </div>
-                </div>
-            </form>
-        </div>  
+                </form>
+            </div>  
 
-        <div id ="chatbox">
-            <form>
-                <div class="form-group row">
-                    <label for="message" class="col-sm-2 col-form-label">Zpráva: </label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="message" placeholder=" Zpráva">
-                    </div>
+        <div id ="chatD">
+            <div class="chatDesign justify-content-center col-sm-12 px-3 py-3 pt-2">
+                <div id = "chatW" class="welcome py-2 pl-2">
+
                 </div>
-                <div class="form-group row">
-                    <div class="offset-sm-2 col-sm-10">
-                        <button type="button" class="btn btn-success" onclick="poslat()">Odeslat</button>
+                <form>
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="message" placeholder=" Zpráva">
+                        </div>
+                        <div class="col-sm-3">
+                            <button type="button" class="btn btn-danger col-sm-12" onclick="poslat()">Odeslat</button>
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
+                <div class="row">
+                    <div class="col-sm-1"></div>
+                        <div id = "chatbox" class="cld chatText col-sm-10 textField p-3">  
+                            <div class="text-center">
+                                <strong>Vítej v mém chatu návštěvníku!</strong>
+                            </div>
+                        </div>
+                    <div class="col-sm-1"></div>
+                </div>    
+            </div>  
+            
         </div>
       </div>
 

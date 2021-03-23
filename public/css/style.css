@@ -2,8 +2,35 @@
     text-align: left;
     font-size: 3em;
 }
+.loginM{
+    color: white;
+    font-size: 2em !important;
+    font-weight: bold;
+}
 
 .jumbotron{
     background-color:lightseagreen !important;
     color: white !important;
+}
+.chatDesign{
+    border: 5px solid darkcyan;
+    border-radius: 50px 50px 50px 50px;
+    background-color: darkcyan;
+}
+.dispFlex{
+    display: flex;
+}
+.cld{
+    width: 60%;
+}
+.welcome{
+    font-size: 2em;
+    color: white;
+    font-weight: bold;
+}
+.btnDesign{
+    background-color: red;
+}
+.textField{
+    background-color: white;
 }
