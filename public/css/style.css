@@ -1,0 +1,9 @@
+.textDesign{
+    text-align: left;
+    font-size: 3em;
+}
+
+.jumbotron{
+    background-color:lightseagreen !important;
+    color: white !important;
+}
