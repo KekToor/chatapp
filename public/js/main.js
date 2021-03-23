@@ -55,6 +55,8 @@ disc.addEventListener('click', ()=>{
     socket.close();
 })
 
+//Pokoušel jsem se přidat odpojení při zavření záložky, ale bohužel se mi to nepovedlo.
+
 
 socket.on('chat', (msg, username) => {
     console.log(msg);
